@@ -5,6 +5,8 @@ import com.mentoring.discolibrary.style.StyleDTO;
 
 class StyleApiMapper {
     StyleDTO mapToDto(final Style oneStyle) {
-        throw new UnsupportedOperationException("implement me!");
+       return  StyleDTO.builder().id(oneStyle.getId())
+               .name(oneStyle.getName())
+               .build();
     }
 }
