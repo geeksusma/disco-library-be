@@ -4,7 +4,9 @@ import java.util.List;
 
 public class GetAllStylesDAO {
 
+    private StyleRepository styleRepository;
+
     public List<Style> getAllStyles() {
-        throw new UnsupportedOperationException("implement me!");
+        return styleRepository.findAllByOrderByName();
     }
 }
