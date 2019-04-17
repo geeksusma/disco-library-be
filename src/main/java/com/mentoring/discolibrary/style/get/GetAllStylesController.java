@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class GetAllStylesController {
     private final GetAllStylesDAO getAllStylesDAO;
@@ -20,24 +21,9 @@ class GetAllStylesController {
     }
 
     ResponseEntity<List<StyleDTO>> getAll() {
-        List<Style> allStyles = getAllStylesDAO.getAllStyles();
-        List<StyleDTO> respuesta = new ArrayList<>();
 
-     /*   if (!allStyles.isEmpty()) {
-            for (Style style : allStyles) {
-                respuesta.add(styleApiMapper.mapToDto(style));
-            }
-
-            return new ResponseEntity(respuesta,HttpStatus.OK);
-        }
-        else return new ResponseEntity(HttpStatus.NO_CONTENT);
-    }*/
-
-        for (Style style : allStyles) {
-            respuesta.add(styleApiMapper.mapToDto(style));
-        }
-
-        return new ResponseEntity(respuesta, HttpStatus.OK);
+        final List<StyleDTO> dtos = getAllStylesDAO.getAllStyles().stream().map(v -> styleApiMapper.mapToDto(v)).collect(Collectors.toList());
+        return new ResponseEntity(dtos, HttpStatus.OK);
     }
 
 }
