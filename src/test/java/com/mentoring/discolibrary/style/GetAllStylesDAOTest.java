@@ -21,7 +21,7 @@ public class GetAllStylesDAOTest {
 
     @Before
     public void setUp() {
-        getAllStylesDAO = new GetAllStylesDAO();
+        getAllStylesDAO = new GetAllStylesDAO(styleRepository);
     }
 
     @Test
