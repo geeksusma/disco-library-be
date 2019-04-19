@@ -3,6 +3,7 @@ package com.mentoring.discolibrary.style;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.Collections;
@@ -17,6 +18,8 @@ import static org.mockito.Mockito.mock;
 public class GetAllStylesDAOTest {
 
     private GetAllStylesDAO getAllStylesDAO;
+
+    @Mock
     private StyleRepository styleRepository;
 
     @Before
