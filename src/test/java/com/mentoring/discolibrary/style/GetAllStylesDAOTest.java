@@ -33,7 +33,7 @@ public class GetAllStylesDAOTest {
         getAllStylesDAO.getAllStyles();
 
         //then
-        then(styleRepository).should().findAllByOrderByName();
+        then(styleRepository).should().findAllByOrderByNameAsc();
     }
 
     @Test
@@ -41,7 +41,7 @@ public class GetAllStylesDAOTest {
 
         //given
         final Style oneStyle = mock(Style.class);
-        given(styleRepository.findAllByOrderByName()).willReturn(Collections.singletonList(oneStyle));
+        given(styleRepository.findAllByOrderByNameAsc()).willReturn(Collections.singletonList(oneStyle));
 
         //when
         final List<Style> allStyles = getAllStylesDAO.getAllStyles();

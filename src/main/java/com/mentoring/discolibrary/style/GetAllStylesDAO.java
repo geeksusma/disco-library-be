@@ -15,6 +15,6 @@ public class GetAllStylesDAO {
 
     public List<Style> getAllStyles() {
 
-        return styleRepository.findAllByOrderByName();
+        return styleRepository.findAllByOrderByNameAsc();
     }
 }

@@ -6,6 +6,6 @@ import java.util.List;
 
 interface StyleRepository extends JpaRepository<StyleEntity, Integer> {
 
-    List<Style> findAllByOrderByName();
+    List<Style> findAllByOrderByNameAsc();
 
 }
